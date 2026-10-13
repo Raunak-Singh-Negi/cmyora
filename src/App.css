@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap');
+
+:root {
+  font-family: 'Montserrat', sans-serif;
+  color: #f5f0e8;
+  background: #101010;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.coming-soon {
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px 20px;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #29221e 0%,
+      #101010 75%
+    );
+}
+
+.content {
+  max-width: 800px;
+  margin: auto;
+}
+
+.brand-label {
+  font-size: 11px;
+  letter-spacing: 5px;
+  color: #c6a77d;
+}
+
+.brand-name {
+  font-family: 'Cormorant Garamond', serif;
+
+  font-size: clamp(75px, 15vw, 160px);
+  font-weight: 400;
+
+  letter-spacing: 10px;
+  margin: 10px 0;
+}
+
+.divider {
+  width: 65px;
+  height: 1px;
+
+  background: #c6a77d;
+
+  margin: 30px auto;
+}
+
+h2 {
+  font-family: 'Cormorant Garamond', serif;
+
+  font-size: clamp(30px, 5vw, 48px);
+  font-weight: 400;
+
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 14px;
+  line-height: 2;
+
+  color: #d2c8bd;
+}
+
+.launch-message {
+  font-size: 12px;
+  line-height: 2;
+
+  margin-top: 25px;
+
+  color: #a99e92;
+}
+
+.contact-button {
+  display: inline-block;
+
+  margin-top: 40px;
+  padding: 15px 35px;
+
+  border: 1px solid #c6a77d;
+
+  color: #c6a77d;
+  text-decoration: none;
+
+  font-size: 11px;
+  letter-spacing: 3px;
+
+  transition: all 0.3s ease;
+}
+
+.contact-button:hover {
+  background: #c6a77d;
+  color: #101010;
+}
+
+footer {
+  margin-top: auto;
+
+  padding-top: 40px;
+
+  font-size: 10px;
+  letter-spacing: 2px;
+
+  color: #777;
+}
