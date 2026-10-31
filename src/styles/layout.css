@@ -1,0 +1,913 @@
+/* =========================================================
+   CMYORA — LAYOUT
+   ========================================================= */
+
+
+/* =========================================================
+   1. GLOBAL SITE LAYOUT
+   ========================================================= */
+
+.site-layout {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.page-content {
+  flex: 1;
+}
+
+
+/* =========================================================
+   2. SIDE NAVIGATION
+   ========================================================= */
+
+.side-menu {
+  position: fixed;
+
+  top: 50%;
+  left: 0;
+
+  transform: translateY(-50%);
+
+  z-index: 100;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.side-menu-item {
+  width: 170px;
+
+  padding: 18px 22px;
+
+  border-bottom: 1px solid #333;
+
+  background: rgba(15, 15, 15, 0.94);
+
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+
+  transition:
+    width 250ms ease,
+    background 250ms ease,
+    color 250ms ease;
+}
+
+.side-menu-item:hover {
+  width: 200px;
+
+  background: var(--color-surface);
+}
+
+.side-menu-item.active {
+  color: var(--color-accent);
+}
+
+
+/* =========================================================
+   3. HOME PAGE
+   ========================================================= */
+
+.home-hero {
+  min-height: 100vh;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.15fr)
+    minmax(320px, 0.85fr);
+
+  align-items: center;
+
+  gap: clamp(40px, 6vw, 110px);
+
+  padding:
+    clamp(70px, 8vh, 120px)
+    clamp(40px, 7vw, 130px);
+
+  /*
+    Extra room for the fixed desktop navigation.
+  */
+  padding-left: clamp(210px, 16vw, 280px);
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 38% 48%,
+      #211b18 0%,
+      #101010 55%,
+      #0b0b0b 100%
+    );
+}
+
+
+/* =========================================================
+   4. LEFT — BRAND COMPOSITION
+   ========================================================= */
+
+.home-brand-area {
+  min-width: 0;
+}
+
+.brand-composition {
+  position: relative;
+
+  width: 100%;
+  min-height: 650px;
+}
+
+
+/* ---------------------------------------------------------
+   DIAGONAL CMYORA WORDMARK
+   --------------------------------------------------------- */
+
+.diagonal-wordmark {
+  position: relative;
+
+  width: min(600px, 100%);
+  height: 500px;
+}
+
+.wordmark-piece {
+  position: absolute;
+
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-weight: 500;
+
+  color: #c6a77d;
+
+  line-height: 0.72;
+
+  user-select: none;
+
+  text-shadow:
+    0 0 30px rgba(198, 167, 125, 0.05);
+}
+
+
+/* C */
+
+.wordmark-c {
+  top: 0;
+  left: 5%;
+
+  font-size: clamp(9rem, 14vw, 15rem);
+}
+
+
+/* MY */
+
+.wordmark-my {
+  top: 145px;
+  left: 25%;
+
+  font-size: clamp(8rem, 12vw, 13rem);
+}
+
+
+/* ORA */
+
+.wordmark-ora {
+  top: 285px;
+  left: 43%;
+
+  font-size: clamp(8rem, 12vw, 13rem);
+}
+
+
+/* =========================================================
+   5. BRAND SUPPORTING TEXT
+   ========================================================= */
+
+.brand-copy {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  max-width: 520px;
+}
+
+.brand-label {
+  margin: 0 0 28px;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 0.72rem;
+  font-weight: 400;
+
+  letter-spacing: 0.35em;
+
+  color: #c6a77d;
+}
+
+.brand-statement {
+  max-width: 500px;
+
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  font-style: italic;
+  font-weight: 400;
+
+  line-height: 1.35;
+
+  color: #d2c8bd;
+}
+
+
+/* =========================================================
+   6. RIGHT — PRODUCT AREA
+   ========================================================= */
+
+.home-product-area {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 0;
+}
+
+.featured-product {
+  width: 100%;
+  max-width: 560px;
+}
+
+
+/* =========================================================
+   7. FUTURE 360° PRODUCT VIEWER
+   ========================================================= */
+
+.product-viewer-placeholder {
+  width: 100%;
+
+  aspect-ratio: 4 / 5;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 18px;
+
+  border: 1px solid rgba(198, 167, 125, 0.35);
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(198, 167, 125, 0.08),
+      rgba(16, 16, 16, 0.2) 65%
+    );
+
+  transition:
+    border-color 300ms ease,
+    transform 400ms ease;
+}
+
+.product-viewer-placeholder:hover {
+  border-color: #c6a77d;
+
+  transform: translateY(-4px);
+}
+
+.viewer-label {
+  font-size: 0.65rem;
+
+  letter-spacing: 0.3em;
+
+  color: #c6a77d;
+}
+
+.viewer-symbol {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 5rem;
+
+  line-height: 1;
+
+  color: #c6a77d;
+}
+
+.viewer-message {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 1.5rem;
+
+  color: #f5f0e8;
+}
+
+.product-viewer-placeholder small {
+  color: #777;
+
+  font-size: 0.65rem;
+
+  letter-spacing: 0.12em;
+}
+
+
+/* =========================================================
+   8. STANDARD INNER PAGES
+   Catalogue / About / Contact
+   ========================================================= */
+
+.standard-page {
+  min-height: 80vh;
+
+  padding:
+    150px
+    var(--page-padding);
+
+  /*
+    Prevent fixed desktop navigation from covering content.
+  */
+  padding-left: max(
+    var(--page-padding),
+    230px
+  );
+}
+
+.standard-page h1 {
+  margin-top: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(3rem, 7vw, 7rem);
+  font-weight: 400;
+}
+
+.section-label {
+  margin-bottom: 20px;
+
+  font-size: 0.7rem;
+
+  letter-spacing: 0.3em;
+
+  color: var(--color-accent);
+}
+
+
+/* =========================================================
+   9. FOOTER
+   ========================================================= */
+
+.site-footer {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 40px;
+
+  padding:
+    60px
+    var(--page-padding);
+
+  border-top: 1px solid #272727;
+
+  color: var(--color-muted);
+}
+
+
+/* =========================================================
+   10. TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .home-hero {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(300px, 0.8fr);
+
+    gap: 40px;
+
+    padding-left: 210px;
+    padding-right: 50px;
+  }
+
+  .brand-composition {
+    min-height: 570px;
+  }
+
+  .diagonal-wordmark {
+    height: 430px;
+  }
+
+  .wordmark-c {
+    top: 0;
+    left: 3%;
+
+    font-size: clamp(8rem, 15vw, 11rem);
+  }
+
+  .wordmark-my {
+    top: 125px;
+    left: 22%;
+
+    font-size: clamp(7rem, 13vw, 10rem);
+  }
+
+  .wordmark-ora {
+    top: 250px;
+    left: 38%;
+
+    font-size: clamp(7rem, 13vw, 10rem);
+  }
+}
+
+
+/* =========================================================
+   11. MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  /*
+    Navigation becomes a fixed bottom navigation bar.
+  */
+
+  .side-menu {
+    top: auto;
+    bottom: 0;
+
+    width: 100%;
+
+    transform: none;
+
+    flex-direction: row;
+  }
+
+  .side-menu-item {
+    width: auto;
+
+    flex: 1;
+
+    padding: 15px 8px;
+
+    text-align: center;
+
+    font-size: 0.55rem;
+  }
+
+  .side-menu-item:hover {
+    width: auto;
+  }
+
+
+  /*
+    Home becomes vertically stacked:
+    
+    BRAND
+      ↓
+    PRODUCT
+  */
+
+  .home-hero {
+    min-height: auto;
+
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+
+    padding:
+      70px
+      24px
+      110px;
+  }
+
+  .home-brand-area {
+    width: 100%;
+  }
+
+  .brand-composition {
+    min-height: 520px;
+  }
+
+  .diagonal-wordmark {
+    width: 100%;
+    height: 380px;
+
+    margin: 0 auto;
+  }
+
+
+  /* Mobile C */
+
+  .wordmark-c {
+    top: 0;
+    left: 5%;
+
+    font-size: clamp(7rem, 30vw, 10rem);
+  }
+
+
+  /* Mobile MY */
+
+  .wordmark-my {
+    top: 105px;
+    left: 24%;
+
+    font-size: clamp(6.5rem, 27vw, 9rem);
+  }
+
+
+  /* Mobile ORA */
+
+  .wordmark-ora {
+    top: 215px;
+    left: 37%;
+
+    font-size: clamp(6rem, 25vw, 8.5rem);
+  }
+
+
+  /*
+    Text no longer needs absolute positioning on mobile.
+  */
+
+  .brand-copy {
+    position: relative;
+
+    left: auto;
+    bottom: auto;
+
+    max-width: 100%;
+
+    margin-top: -15px;
+  }
+
+  .brand-label {
+    font-size: 0.6rem;
+
+    line-height: 1.8;
+  }
+
+  .brand-statement {
+    max-width: 420px;
+
+    font-size: 1.35rem;
+  }
+
+
+  /*
+    360 viewer
+  */
+
+  .home-product-area {
+    width: 100%;
+  }
+
+  .featured-product {
+    width: 100%;
+    max-width: 500px;
+
+    margin: 0 auto;
+  }
+
+  .product-viewer-placeholder {
+    aspect-ratio: 1 / 1;
+  }
+
+
+  /*
+    Inner pages
+  */
+
+  .standard-page {
+    min-height: 100vh;
+
+    padding:
+      90px
+      24px
+      120px;
+  }
+
+
+  /*
+    Footer
+  */
+
+  .site-footer {
+    flex-direction: column;
+
+    gap: 25px;
+
+    padding:
+      50px
+      24px
+      100px;
+  }
+}
+
+
+/* =========================================================
+   12. VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+  .brand-composition {
+    min-height: 470px;
+  }
+
+  .diagonal-wordmark {
+    height: 340px;
+  }
+
+  .wordmark-c {
+    top: 0;
+    left: 2%;
+  }
+
+  .wordmark-my {
+    top: 95px;
+    left: 20%;
+  }
+
+  .wordmark-ora {
+    top: 195px;
+    left: 31%;
+  }
+
+  .side-menu-item {
+    padding:
+      14px
+      4px;
+
+    font-size: 0.48rem;
+
+    letter-spacing: 0.12em;
+  }
+}
+@media (max-width: 900px) {
+
+  .home-hero {
+    grid-template-columns: 1fr;
+
+    gap: 60px;
+
+    padding:
+      100px
+      24px
+      110px;
+  }
+
+  .brand-composition {
+    min-height: 520px;
+  }
+
+  .diagonal-wordmark {
+    height: 390px;
+
+    margin: auto;
+  }
+
+  .wordmark-c {
+    top: 0;
+    left: 5%;
+
+    font-size: clamp(7rem, 30vw, 11rem);
+  }
+
+  .wordmark-my {
+    top: 110px;
+    left: 25%;
+
+    font-size: clamp(6.5rem, 27vw, 10rem);
+  }
+
+  .wordmark-ora {
+    top: 220px;
+    left: 38%;
+
+    font-size: clamp(6rem, 25vw, 9rem);
+  }
+
+  .brand-copy {
+    position: relative;
+
+    margin-top: -20px;
+  }
+
+  .featured-product {
+    max-width: 500px;
+  }
+
+}
+/* =========================================================
+   LATEST COLLECTION SHOWCASE
+   ========================================================= */
+
+.collection-showcase {
+  width: 100%;
+  max-width: 570px;
+
+  opacity: 0;
+}
+
+.showcase-stage {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 4 / 5;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  background:
+    radial-gradient(
+      circle at 50% 42%,
+      rgba(198, 167, 125, 0.09),
+      rgba(16, 16, 16, 0.96) 65%
+    );
+}
+
+
+/* ---------------------------------------------------------
+   INDIVIDUAL SLIDES
+   --------------------------------------------------------- */
+
+.showcase-slide {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0;
+
+  z-index: 1;
+
+  transition:
+    opacity 900ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.showcase-slide.is-active {
+  opacity: 1;
+
+  z-index: 2;
+}
+
+
+/* ---------------------------------------------------------
+   PRODUCT / CAMPAIGN IMAGE
+   --------------------------------------------------------- */
+
+.showcase-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transform: scale(1.025);
+
+  transition:
+    transform 6.5s cubic-bezier(0.16, 1, 0.3, 1);
+
+  user-select: none;
+}
+
+.showcase-slide.is-active .showcase-image {
+  transform: scale(1);
+}
+
+
+/*
+  For transparent PNG/WebP product cut-outs,
+  add class="showcase-image contain" if desired.
+*/
+
+.showcase-image.contain {
+  object-fit: contain;
+
+  padding: 8%;
+}
+
+
+/* ---------------------------------------------------------
+   DARK GRADIENT FOR TEXT LEGIBILITY
+   --------------------------------------------------------- */
+
+.showcase-shade {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(7, 7, 7, 0.82) 0%,
+      rgba(7, 7, 7, 0.18) 42%,
+      rgba(7, 7, 7, 0.02) 70%
+    );
+}
+
+
+/* ---------------------------------------------------------
+   TEXT
+   --------------------------------------------------------- */
+
+.showcase-copy {
+  position: absolute;
+
+  left: clamp(24px, 5vw, 44px);
+  bottom: clamp(28px, 6vw, 52px);
+
+  z-index: 5;
+
+  max-width: 75%;
+}
+
+.showcase-eyebrow {
+  display: block;
+
+  margin-bottom: 12px;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 0.62rem;
+
+  letter-spacing: 0.35em;
+
+  color: #c6a77d;
+}
+
+.showcase-copy h2 {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(2rem, 4vw, 3.6rem);
+
+  font-weight: 400;
+
+  line-height: 0.95;
+
+  color: #f5f0e8;
+}
+
+
+/* ---------------------------------------------------------
+   GOLD FRAME
+   --------------------------------------------------------- */
+
+.showcase-gold-frame {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 10;
+
+  pointer-events: none;
+
+  border:
+    1px solid
+    rgba(198, 167, 125, 0.42);
+
+  box-shadow:
+    inset 0 0 40px
+    rgba(0, 0, 0, 0.18);
+}
+
+
+/* ---------------------------------------------------------
+   COUNTER
+   --------------------------------------------------------- */
+
+.showcase-counter {
+  position: absolute;
+
+  top: 24px;
+  right: 24px;
+
+  z-index: 11;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 0.55rem;
+
+  letter-spacing: 0.15em;
+
+  color: rgba(245, 240, 232, 0.7);
+}
+
+.counter-line {
+  width: 22px;
+  height: 1px;
+
+  background: #c6a77d;
+}
