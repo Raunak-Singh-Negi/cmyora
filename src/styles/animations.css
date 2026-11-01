@@ -302,3 +302,273 @@
   }
 
 }
+/* =========================================================
+   CONTACT PAGE ENTRANCE
+   ========================================================= */
+
+
+/* Header */
+
+.contact-header {
+  opacity: 0;
+
+  transform:
+    translateY(20px);
+
+  animation:
+    contact-header-arrive
+    700ms
+    cubic-bezier(0.16, 1, 0.3, 1)
+    100ms
+    forwards;
+}
+
+
+@keyframes contact-header-arrive {
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+/* ---------------------------------------------------------
+   PHONE — LEFT TO RIGHT
+   --------------------------------------------------------- */
+
+.contact-card-phone {
+  opacity: 0;
+
+  transform:
+    translateX(-120px);
+
+  animation:
+    contact-left-arrive
+    900ms
+    cubic-bezier(0.16, 1, 0.3, 1)
+    400ms
+    forwards;
+}
+
+
+@keyframes contact-left-arrive {
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateX(0);
+  }
+
+}
+
+
+/* ---------------------------------------------------------
+   EMAIL — RIGHT TO LEFT
+   --------------------------------------------------------- */
+
+.contact-card-email {
+  opacity: 0;
+
+  transform:
+    translateX(120px);
+
+  animation:
+    contact-right-arrive
+    900ms
+    cubic-bezier(0.16, 1, 0.3, 1)
+    650ms
+    forwards;
+}
+
+
+@keyframes contact-right-arrive {
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateX(0);
+  }
+
+}
+/* =========================================================
+   ABOUT PAGE — ENTRANCE SEQUENCE
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   HEADER
+   --------------------------------------------------------- */
+
+.about-header {
+  opacity: 0;
+
+  transform:
+    translateY(18px);
+
+  animation:
+    about-header-arrive
+    650ms
+    cubic-bezier(0.16, 1, 0.3, 1)
+    100ms
+    forwards;
+}
+
+
+@keyframes about-header-arrive {
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+/* ---------------------------------------------------------
+   CARD 1 — LEFT
+   --------------------------------------------------------- */
+
+.about-card-vision {
+  opacity: 0;
+
+  transform:
+    translateX(-110px);
+
+  animation:
+    about-left-arrive
+    800ms
+    cubic-bezier(0.16, 1, 0.3, 1)
+    320ms
+    forwards;
+}
+
+
+/* ---------------------------------------------------------
+   CARD 2 — RIGHT
+   --------------------------------------------------------- */
+
+.about-card-material {
+  opacity: 0;
+
+  transform:
+    translateX(110px);
+
+  animation:
+    about-right-arrive
+    800ms
+    cubic-bezier(0.16, 1, 0.3, 1)
+    520ms
+    forwards;
+}
+
+
+/* ---------------------------------------------------------
+   CARD 3 — LEFT
+   --------------------------------------------------------- */
+
+.about-card-location {
+  opacity: 0;
+
+  transform:
+    translateX(-110px);
+
+  animation:
+    about-left-arrive
+    800ms
+    cubic-bezier(0.16, 1, 0.3, 1)
+    720ms
+    forwards;
+}
+
+
+@keyframes about-left-arrive {
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateX(0);
+  }
+
+}
+
+
+@keyframes about-right-arrive {
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateX(0);
+  }
+
+}
+/* =========================================================
+   CATALOGUE PRODUCT DETAIL
+   ========================================================= */
+
+.product-detail-backdrop {
+  animation:
+    catalogue-backdrop-in
+    300ms
+    ease
+    forwards;
+}
+
+
+.product-detail {
+  animation:
+    catalogue-detail-in
+    600ms
+    cubic-bezier(
+      0.16,
+      1,
+      0.3,
+      1
+    )
+    forwards;
+}
+
+
+@keyframes catalogue-backdrop-in {
+
+  from {
+    background:
+      rgba(4, 4, 4, 0);
+  }
+
+  to {
+    background:
+      rgba(4, 4, 4, 0.86);
+  }
+
+}
+
+
+@keyframes catalogue-detail-in {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(28px)
+      scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+}

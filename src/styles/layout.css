@@ -358,20 +358,259 @@
    9. FOOTER
    ========================================================= */
 
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
 .site-footer {
-  display: flex;
-
-  justify-content: space-between;
-
-  gap: 40px;
+  position: relative;
 
   padding:
-    60px
-    var(--page-padding);
+    clamp(65px, 8vw, 105px)
+    var(--page-padding)
+    30px;
 
-  border-top: 1px solid #272727;
+  border-top:
+    1px solid
+    rgba(198, 167, 125, 0.18);
 
-  color: var(--color-muted);
+  background:
+    linear-gradient(
+      180deg,
+      #0d0d0d 0%,
+      #090909 100%
+    );
+
+  color: #d2c8bd;
+}
+
+
+/* =========================================================
+   MAIN FOOTER
+   ========================================================= */
+
+.footer-main {
+  display: grid;
+
+  grid-template-columns:
+    minmax(220px, 1.7fr)
+    minmax(130px, 0.7fr)
+    minmax(130px, 0.7fr);
+
+  gap:
+    clamp(50px, 8vw, 130px);
+
+  align-items: start;
+
+  padding-bottom:
+    clamp(55px, 7vw, 85px);
+}
+
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.footer-brand {
+  max-width: 300px;
+}
+
+
+.footer-logo {
+  display: inline-block;
+
+  margin-bottom: 14px;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(2.1rem, 3vw, 3rem);
+
+  font-weight: 500;
+
+  letter-spacing: 0.08em;
+
+  color: #f5f0e8;
+
+  transition:
+    color 300ms ease,
+    letter-spacing 400ms
+      cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+.footer-logo:hover {
+  color: #c6a77d;
+
+  letter-spacing: 0.13em;
+}
+
+
+.footer-brand p {
+  margin: 0;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 1.15rem;
+
+  line-height: 1.5;
+
+  color: #a99e92;
+}
+
+
+/* =========================================================
+   COLUMNS
+   ========================================================= */
+
+.footer-column {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 13px;
+}
+
+
+.footer-heading {
+  margin-bottom: 8px;
+
+  font-family:
+    "Montserrat",
+    sans-serif;
+
+  font-size: 0.58rem;
+
+  font-weight: 500;
+
+  letter-spacing: 0.32em;
+
+  color: #c6a77d;
+}
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+.footer-column a {
+  position: relative;
+
+  display: inline-block;
+
+  padding-bottom: 3px;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 1.05rem;
+
+  color: #d2c8bd;
+
+  transition:
+    color 250ms ease,
+    transform 300ms
+      cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+/*
+  Gold underline starts invisible.
+*/
+
+.footer-column a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 1px;
+
+  background: #c6a77d;
+
+  transform:
+    scaleX(0);
+
+  transform-origin:
+    right center;
+
+  transition:
+    transform 350ms
+      cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+/*
+  Minimal hover:
+  tiny horizontal movement +
+  gold underline draws itself.
+*/
+
+.footer-column a:hover {
+  color: #f5f0e8;
+
+  transform:
+    translateX(4px);
+}
+
+
+.footer-column a:hover::after {
+  transform:
+    scaleX(1);
+
+  transform-origin:
+    left center;
+}
+
+
+/* =========================================================
+   LOWER FOOTER
+   ========================================================= */
+
+.footer-bottom {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  padding-top: 26px;
+
+  border-top:
+    1px solid
+    rgba(198, 167, 125, 0.16);
+
+  font-family:
+    "Montserrat",
+    sans-serif;
+
+  font-size: 0.58rem;
+
+  letter-spacing: 0.16em;
+
+  color: #777;
+}
+
+
+/*
+  Give "Crafted in India"
+  a subtle warmer treatment.
+*/
+
+.footer-bottom span:first-child {
+  color:
+    rgba(198, 167, 125, 0.72);
 }
 
 
@@ -379,328 +618,22 @@
    10. TABLET
    ========================================================= */
 
-@media (max-width: 1100px) {
 
-  .home-hero {
-    grid-template-columns:
-      minmax(0, 1fr)
-      minmax(300px, 0.8fr);
-
-    gap: 40px;
-
-    padding-left: 210px;
-    padding-right: 50px;
-  }
-
-  .brand-composition {
-    min-height: 570px;
-  }
-
-  .diagonal-wordmark {
-    height: 430px;
-  }
-
-  .wordmark-c {
-    top: 0;
-    left: 3%;
-
-    font-size: clamp(8rem, 15vw, 11rem);
-  }
-
-  .wordmark-my {
-    top: 125px;
-    left: 22%;
-
-    font-size: clamp(7rem, 13vw, 10rem);
-  }
-
-  .wordmark-ora {
-    top: 250px;
-    left: 38%;
-
-    font-size: clamp(7rem, 13vw, 10rem);
-  }
-}
 
 
 /* =========================================================
    11. MOBILE
    ========================================================= */
 
-@media (max-width: 768px) {
 
-  /*
-    Navigation becomes a fixed bottom navigation bar.
-  */
-
-  .side-menu {
-    top: auto;
-    bottom: 0;
-
-    width: 100%;
-
-    transform: none;
-
-    flex-direction: row;
-  }
-
-  .side-menu-item {
-    width: auto;
-
-    flex: 1;
-
-    padding: 15px 8px;
-
-    text-align: center;
-
-    font-size: 0.55rem;
-  }
-
-  .side-menu-item:hover {
-    width: auto;
-  }
-
-
-  /*
-    Home becomes vertically stacked:
-    
-    BRAND
-      ↓
-    PRODUCT
-  */
-
-  .home-hero {
-    min-height: auto;
-
-    grid-template-columns: 1fr;
-
-    gap: 55px;
-
-    padding:
-      70px
-      24px
-      110px;
-  }
-
-  .home-brand-area {
-    width: 100%;
-  }
-
-  .brand-composition {
-    min-height: 520px;
-  }
-
-  .diagonal-wordmark {
-    width: 100%;
-    height: 380px;
-
-    margin: 0 auto;
-  }
-
-
-  /* Mobile C */
-
-  .wordmark-c {
-    top: 0;
-    left: 5%;
-
-    font-size: clamp(7rem, 30vw, 10rem);
-  }
-
-
-  /* Mobile MY */
-
-  .wordmark-my {
-    top: 105px;
-    left: 24%;
-
-    font-size: clamp(6.5rem, 27vw, 9rem);
-  }
-
-
-  /* Mobile ORA */
-
-  .wordmark-ora {
-    top: 215px;
-    left: 37%;
-
-    font-size: clamp(6rem, 25vw, 8.5rem);
-  }
-
-
-  /*
-    Text no longer needs absolute positioning on mobile.
-  */
-
-  .brand-copy {
-    position: relative;
-
-    left: auto;
-    bottom: auto;
-
-    max-width: 100%;
-
-    margin-top: -15px;
-  }
-
-  .brand-label {
-    font-size: 0.6rem;
-
-    line-height: 1.8;
-  }
-
-  .brand-statement {
-    max-width: 420px;
-
-    font-size: 1.35rem;
-  }
-
-
-  /*
-    360 viewer
-  */
-
-  .home-product-area {
-    width: 100%;
-  }
-
-  .featured-product {
-    width: 100%;
-    max-width: 500px;
-
-    margin: 0 auto;
-  }
-
-  .product-viewer-placeholder {
-    aspect-ratio: 1 / 1;
-  }
-
-
-  /*
-    Inner pages
-  */
-
-  .standard-page {
-    min-height: 100vh;
-
-    padding:
-      90px
-      24px
-      120px;
-  }
-
-
-  /*
-    Footer
-  */
-
-  .site-footer {
-    flex-direction: column;
-
-    gap: 25px;
-
-    padding:
-      50px
-      24px
-      100px;
-  }
-}
 
 
 /* =========================================================
    12. VERY SMALL PHONES
    ========================================================= */
 
-@media (max-width: 430px) {
 
-  .brand-composition {
-    min-height: 470px;
-  }
 
-  .diagonal-wordmark {
-    height: 340px;
-  }
-
-  .wordmark-c {
-    top: 0;
-    left: 2%;
-  }
-
-  .wordmark-my {
-    top: 95px;
-    left: 20%;
-  }
-
-  .wordmark-ora {
-    top: 195px;
-    left: 31%;
-  }
-
-  .side-menu-item {
-    padding:
-      14px
-      4px;
-
-    font-size: 0.48rem;
-
-    letter-spacing: 0.12em;
-  }
-}
-@media (max-width: 900px) {
-
-  .home-hero {
-    grid-template-columns: 1fr;
-
-    gap: 60px;
-
-    padding:
-      100px
-      24px
-      110px;
-  }
-
-  .brand-composition {
-    min-height: 520px;
-  }
-
-  .diagonal-wordmark {
-    height: 390px;
-
-    margin: auto;
-  }
-
-  .wordmark-c {
-    top: 0;
-    left: 5%;
-
-    font-size: clamp(7rem, 30vw, 11rem);
-  }
-
-  .wordmark-my {
-    top: 110px;
-    left: 25%;
-
-    font-size: clamp(6.5rem, 27vw, 10rem);
-  }
-
-  .wordmark-ora {
-    top: 220px;
-    left: 38%;
-
-    font-size: clamp(6rem, 25vw, 9rem);
-  }
-
-  .brand-copy {
-    position: relative;
-
-    margin-top: -20px;
-  }
-
-  .featured-product {
-    max-width: 500px;
-  }
-
-}
 /* =========================================================
    LATEST COLLECTION SHOWCASE
    ========================================================= */
@@ -910,4 +843,2604 @@
   height: 1px;
 
   background: #c6a77d;
+}
+/* =========================================================
+   ABOUT PAGE
+   ========================================================= */
+
+.about-page {
+  min-height: 100vh;
+
+  padding:
+    clamp(85px, 10vh, 120px)
+    clamp(50px, 8vw, 140px)
+    100px;
+
+  /*
+    Space for fixed desktop navigation.
+  */
+  padding-left:
+    clamp(220px, 18vw, 310px);
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 48% 38%,
+      rgba(41, 34, 30, 0.68) 0%,
+      #101010 58%,
+      #0b0b0b 100%
+    );
+}
+
+
+/* ---------------------------------------------------------
+   ABOUT INTRODUCTION
+   --------------------------------------------------------- */
+
+.about-header {
+  max-width: 780px;
+
+  margin-bottom:
+    clamp(38px, 5vh, 58px);
+}
+
+.about-header h1 {
+  margin:
+    8px
+    0
+    14px;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(3.6rem, 6vw, 6.5rem);
+
+  font-weight: 400;
+
+  line-height: 0.95;
+
+  color: #f5f0e8;
+}
+
+.about-header p {
+  max-width: 650px;
+
+  margin: 0;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(1.1rem, 1.5vw, 1.4rem);
+
+  line-height: 1.55;
+
+  color: #d2c8bd;
+}
+
+
+/* =========================================================
+   ABOUT CARDS
+   ========================================================= */
+
+.about-cards {
+  display: flex;
+  flex-direction: column;
+
+  gap: 22px;
+}
+
+
+/*
+  These are intentionally shallower than
+  the Contact cards.
+*/
+
+.about-card {
+  position: relative;
+
+  width: min(820px, 80%);
+
+  min-height: 210px;
+
+  padding:
+    clamp(28px, 3.5vw, 45px)
+    clamp(32px, 4vw, 55px);
+
+  border:
+    1px solid
+    rgba(198, 167, 125, 0.32);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(29, 24, 21, 0.96),
+      rgba(13, 13, 13, 0.96)
+    );
+
+  box-shadow:
+    0 20px 65px
+    rgba(0, 0, 0, 0.20);
+
+  transition:
+    border-color 350ms ease,
+    transform 350ms ease,
+    box-shadow 350ms ease;
+}
+
+
+/*
+  LEFT → RIGHT → LEFT composition.
+*/
+
+.about-card-vision {
+  align-self: flex-start;
+}
+
+.about-card-material {
+  align-self: flex-end;
+}
+
+.about-card-location {
+  align-self: flex-start;
+
+  /*
+    Deliberately smaller final card.
+  */
+  width: min(680px, 68%);
+
+  min-height: 185px;
+}
+
+
+.about-card:hover {
+  border-color:
+    rgba(198, 167, 125, 0.70);
+
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 26px 75px
+    rgba(0, 0, 0, 0.30);
+}
+
+
+/* ---------------------------------------------------------
+   GOLD CARD LABEL
+   --------------------------------------------------------- */
+
+.about-card-label {
+  display: block;
+
+  margin-bottom: 12px;
+
+  font-family:
+    "Montserrat",
+    sans-serif;
+
+  font-size: 0.61rem;
+
+  letter-spacing: 0.34em;
+
+  color: #c6a77d;
+}
+
+
+/* ---------------------------------------------------------
+   CARD HEADLINE
+   --------------------------------------------------------- */
+
+.about-card h2 {
+  max-width: 650px;
+
+  margin: 0;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(1.8rem, 3vw, 2.8rem);
+
+  font-weight: 400;
+
+  line-height: 1.05;
+
+  color: #f5f0e8;
+}
+
+
+/* ---------------------------------------------------------
+   GOLD DIVIDER
+   --------------------------------------------------------- */
+
+.about-divider {
+  width: 48px;
+  height: 1px;
+
+  margin:
+    18px
+    0;
+
+  background: #c6a77d;
+
+  transition:
+    width 400ms ease;
+}
+
+.about-card:hover
+.about-divider {
+  width: 78px;
+}
+
+
+/* ---------------------------------------------------------
+   BODY COPY
+   --------------------------------------------------------- */
+
+.about-description {
+  max-width: 650px;
+
+  margin: 0;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(1rem, 1.3vw, 1.18rem);
+
+  line-height: 1.55;
+
+  color: #d2c8bd;
+}
+
+.about-secondary-copy {
+  margin-top: 12px;
+
+  color: #a99e92;
+}
+
+
+/* ---------------------------------------------------------
+   MANUFACTURING ADDRESS
+   --------------------------------------------------------- */
+
+.about-address {
+  margin-top: 15px;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(1.05rem, 1.4vw, 1.25rem);
+
+  font-style: normal;
+
+  line-height: 1.55;
+
+  color: #f5f0e8;
+}
+/* =========================================================
+   CONTACT PAGE
+   ========================================================= */
+
+.contact-page {
+  min-height: 100vh;
+
+  padding:
+    clamp(110px, 14vh, 170px)
+    clamp(50px, 8vw, 140px)
+    120px;
+
+  /*
+    Leave room for desktop side navigation.
+  */
+  padding-left:
+    clamp(220px, 18vw, 310px);
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 40%,
+      rgba(41, 34, 30, 0.72) 0%,
+      #101010 58%,
+      #0b0b0b 100%
+    );
+}
+
+
+/* ---------------------------------------------------------
+   CONTACT INTRODUCTION
+   --------------------------------------------------------- */
+
+.contact-header {
+  max-width: 760px;
+
+  margin-bottom:
+    clamp(60px, 8vh, 100px);
+}
+
+.contact-header h1 {
+  margin:
+    12px
+    0
+    20px;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(3.8rem, 7vw, 7rem);
+
+  font-weight: 400;
+
+  line-height: 0.95;
+
+  color: #f5f0e8;
+}
+
+.contact-header p {
+  max-width: 580px;
+
+  margin: 0;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(1.2rem, 1.7vw, 1.55rem);
+
+  line-height: 1.6;
+
+  color: #d2c8bd;
+}
+
+
+/* =========================================================
+   CONTACT CARDS
+   ========================================================= */
+
+.contact-cards {
+  display: flex;
+  flex-direction: column;
+
+  gap: 42px;
+}
+
+
+/* Shared card */
+
+.contact-card {
+  position: relative;
+
+  width: min(760px, 78%);
+
+  min-height: 320px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding:
+    clamp(35px, 5vw, 65px);
+
+  border:
+    1px solid
+    rgba(198, 167, 125, 0.35);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(29, 24, 21, 0.96),
+      rgba(13, 13, 13, 0.96)
+    );
+
+  box-shadow:
+    0 25px 80px
+    rgba(0, 0, 0, 0.22);
+
+  transition:
+    border-color 350ms ease,
+    transform 350ms ease,
+    box-shadow 350ms ease;
+}
+
+
+/*
+  Phone remains toward the left.
+*/
+
+.contact-card-phone {
+  align-self: flex-start;
+}
+
+
+/*
+  Email shifts toward the right.
+*/
+
+.contact-card-email {
+  align-self: flex-end;
+}
+
+
+/* ---------------------------------------------------------
+   CARD HOVER
+   --------------------------------------------------------- */
+
+.contact-card:hover {
+  border-color:
+    rgba(198, 167, 125, 0.75);
+
+  transform:
+    translateY(-4px);
+
+  box-shadow:
+    0 30px 90px
+    rgba(0, 0, 0, 0.34);
+}
+
+
+/* ---------------------------------------------------------
+   SMALL GOLD HEADING
+   --------------------------------------------------------- */
+
+.contact-card-label {
+  margin-bottom: 18px;
+
+  font-family:
+    "Montserrat",
+    sans-serif;
+
+  font-size: 0.65rem;
+
+  letter-spacing: 0.35em;
+
+  color: #c6a77d;
+}
+
+
+/* ---------------------------------------------------------
+   PHONE / EMAIL
+   --------------------------------------------------------- */
+
+.contact-value {
+  width: fit-content;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(2.3rem, 4.5vw, 4.3rem);
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  color: #f5f0e8;
+
+  transition:
+    color 250ms ease;
+}
+
+.contact-value:hover {
+  color: #c6a77d;
+}
+
+
+/*
+  Email addresses are longer,
+  so keep them slightly smaller.
+*/
+
+.contact-email {
+  font-size:
+    clamp(2rem, 3.8vw, 3.8rem);
+}
+
+
+/* ---------------------------------------------------------
+   GOLD DIVIDER
+   --------------------------------------------------------- */
+
+.contact-divider {
+  width: 55px;
+  height: 1px;
+
+  margin:
+    28px
+    0;
+
+  background: #c6a77d;
+
+  transition:
+    width 400ms ease;
+}
+
+.contact-card:hover
+.contact-divider {
+  width: 90px;
+}
+
+
+/* ---------------------------------------------------------
+   DESCRIPTION
+   --------------------------------------------------------- */
+
+.contact-description {
+  max-width: 560px;
+
+  margin:
+    0
+    0
+    32px;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(1.05rem, 1.5vw, 1.3rem);
+
+  line-height: 1.65;
+
+  color: #d2c8bd;
+}
+
+
+/* ---------------------------------------------------------
+   ACTION
+   --------------------------------------------------------- */
+
+.contact-action {
+  width: fit-content;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  font-family:
+    "Montserrat",
+    sans-serif;
+
+  font-size: 0.62rem;
+
+  letter-spacing: 0.24em;
+
+  color: #c6a77d;
+
+  transition:
+    gap 250ms ease,
+    color 250ms ease;
+}
+
+.contact-action:hover {
+  gap: 18px;
+
+  color: #f5f0e8;
+}
+
+/* =========================================================
+   CATALOGUE PAGE
+   ========================================================= */
+
+.catalogue-page {
+  min-height: 100vh;
+
+  padding:
+    clamp(70px, 8vh, 105px)
+    clamp(45px, 6vw, 100px)
+    110px;
+
+  padding-left:
+    clamp(220px, 17vw, 285px);
+
+  background:
+    radial-gradient(
+      circle at 45% 18%,
+      rgba(41, 34, 30, 0.60),
+      #101010 52%,
+      #0b0b0b 100%
+    );
+}
+
+
+/* ---------------------------------------------------------
+   HEADER
+   --------------------------------------------------------- */
+
+.catalogue-header {
+  max-width: 700px;
+
+  margin-bottom:
+    clamp(35px, 5vh, 55px);
+}
+
+.catalogue-header h1 {
+  margin:
+    8px
+    0
+    12px;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(3.8rem, 6vw, 6.4rem);
+
+  font-weight: 400;
+
+  line-height: 0.9;
+
+  color: #f5f0e8;
+}
+
+.catalogue-header p {
+  max-width: 520px;
+
+  margin: 0;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(1.05rem, 1.4vw, 1.3rem);
+
+  line-height: 1.5;
+
+  color: #d2c8bd;
+}
+
+
+/* =========================================================
+   PRODUCT GRID
+   ========================================================= */
+
+.catalogue-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap:
+    clamp(22px, 2.5vw, 38px);
+
+  align-items: start;
+}
+
+
+/* =========================================================
+   CATALOGUE CARD
+   ========================================================= */
+
+.catalogue-card {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 4 / 5;
+
+  padding: 0;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(198, 167, 125, 0.32);
+
+  background: #101010;
+
+  color: inherit;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  appearance: none;
+
+  transition:
+    transform 350ms ease,
+    border-color 350ms ease,
+    box-shadow 350ms ease;
+}
+
+.catalogue-card:hover {
+  transform:
+    translateY(-4px);
+
+  border-color:
+    rgba(198, 167, 125, 0.72);
+
+  box-shadow:
+    0 24px 75px
+    rgba(0, 0, 0, 0.30);
+}
+
+
+.catalogue-card-image-wrap {
+  position: absolute;
+
+  inset: 0;
+
+  overflow: hidden;
+}
+
+
+.catalogue-card-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transform:
+    scale(1.015);
+
+  transition:
+    transform 800ms
+    cubic-bezier(
+      0.16,
+      1,
+      0.3,
+      1
+    );
+}
+
+
+.catalogue-card:hover
+.catalogue-card-image {
+  transform:
+    scale(1.04);
+}
+
+
+.catalogue-card-shade {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(7, 7, 7, 0.88) 0%,
+      rgba(7, 7, 7, 0.28) 35%,
+      rgba(7, 7, 7, 0.02) 67%
+    );
+}
+
+
+.catalogue-card-copy {
+  position: absolute;
+
+  left:
+    clamp(22px, 3vw, 38px);
+
+  right:
+    clamp(22px, 3vw, 38px);
+
+  bottom:
+    clamp(22px, 3vw, 36px);
+
+  z-index: 3;
+}
+
+
+.catalogue-card-copy > span:first-child {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-family:
+    "Montserrat",
+    sans-serif;
+
+  font-size: 0.58rem;
+
+  letter-spacing: 0.28em;
+
+  color: #c6a77d;
+}
+
+
+.catalogue-card-copy h2 {
+  margin:
+    0
+    0
+    16px;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(2rem, 3vw, 3.3rem);
+
+  font-weight: 400;
+
+  color: #f5f0e8;
+}
+
+
+.catalogue-explore {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  font-family:
+    "Montserrat",
+    sans-serif;
+
+  font-size: 0.56rem;
+
+  letter-spacing: 0.25em;
+
+  color:
+    rgba(
+      245,
+      240,
+      232,
+      0.72
+    );
+}
+
+
+/* =========================================================
+   PRODUCT DETAIL BACKDROP
+   ========================================================= */
+
+.product-detail-backdrop {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 500;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding:
+    clamp(20px, 4vw, 55px);
+
+  overflow-y: auto;
+
+  background:
+    rgba(4, 4, 4, 0.86);
+
+  backdrop-filter:
+    blur(12px);
+}
+
+
+/* =========================================================
+   PRODUCT DETAIL
+   ========================================================= */
+
+.product-detail {
+  position: relative;
+
+  width:
+    min(1180px, 100%);
+
+  max-height:
+    calc(100vh - 50px);
+
+  overflow-y: auto;
+
+  padding:
+    clamp(34px, 5vw, 70px);
+
+  border:
+    1px solid
+    rgba(198, 167, 125, 0.40);
+
+  background:
+    linear-gradient(
+      145deg,
+      #171310,
+      #0c0c0c 58%
+    );
+
+  box-shadow:
+    0 35px 120px
+    rgba(0, 0, 0, 0.58);
+}
+
+
+/* ---------------------------------------------------------
+   CLOSE
+   --------------------------------------------------------- */
+
+.product-detail-close {
+  position: absolute;
+
+  top: 18px;
+  right: 22px;
+
+  z-index: 20;
+
+  width: 42px;
+  height: 42px;
+
+  border: 0;
+
+  background:
+    transparent;
+
+  color: #c6a77d;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 2rem;
+
+  cursor: pointer;
+}
+
+
+/* ---------------------------------------------------------
+   DETAIL HEADING
+   --------------------------------------------------------- */
+
+.product-detail-heading {
+  margin-bottom: 34px;
+}
+
+
+.product-detail-heading h2 {
+  margin:
+    6px
+    0
+    5px;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(3rem, 5vw, 5rem);
+
+  font-weight: 400;
+
+  line-height: 0.95;
+
+  color: #f5f0e8;
+}
+
+
+.product-detail-heading p {
+  margin: 0;
+
+  color: #a99e92;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 1.15rem;
+}
+
+
+/* =========================================================
+   CAROUSEL + COLOURS
+   ========================================================= */
+
+.product-detail-main {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(150px, 210px);
+
+  gap:
+    clamp(25px, 4vw, 55px);
+
+  align-items: center;
+}
+
+
+/* ---------------------------------------------------------
+   CAROUSEL
+   --------------------------------------------------------- */
+
+.product-carousel {
+  width: 100%;
+
+  opacity: 0;
+
+  transition:
+    opacity 300ms ease;
+}
+
+
+.product-carousel.is-ready {
+  opacity: 1;
+}
+
+
+.carousel-stage {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 4 / 5;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(198, 167, 125, 0.26);
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(198, 167, 125, 0.07),
+      #0c0c0c 70%
+    );
+}
+
+
+.carousel-image {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  opacity: 0;
+
+  transform:
+    translateX(16px)
+    scale(0.995);
+
+  transition:
+    opacity 450ms ease,
+    transform 550ms
+    cubic-bezier(
+      0.16,
+      1,
+      0.3,
+      1
+    );
+}
+
+
+.carousel-image.is-active {
+  opacity: 1;
+
+  transform:
+    translateX(0)
+    scale(1);
+}
+
+
+/* ---------------------------------------------------------
+   CAROUSEL ARROWS
+   --------------------------------------------------------- */
+
+.carousel-arrow {
+  position: absolute;
+
+  top: 50%;
+
+  z-index: 5;
+
+  transform:
+    translateY(-50%);
+
+  width: 42px;
+  height: 56px;
+
+  border:
+    1px solid
+    rgba(198, 167, 125, 0.28);
+
+  background:
+    rgba(8, 8, 8, 0.48);
+
+  color: #c6a77d;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 2rem;
+
+  cursor: pointer;
+
+  transition:
+    background 250ms ease,
+    border-color 250ms ease;
+}
+
+
+.carousel-arrow:hover {
+  background:
+    rgba(16, 16, 16, 0.85);
+
+  border-color:
+    #c6a77d;
+}
+
+
+.carousel-arrow-left {
+  left: 18px;
+}
+
+
+.carousel-arrow-right {
+  right: 18px;
+}
+
+
+/* ---------------------------------------------------------
+   DOTS
+   --------------------------------------------------------- */
+
+.carousel-dots {
+  position: absolute;
+
+  left: 50%;
+  bottom: 20px;
+
+  z-index: 6;
+
+  transform:
+    translateX(-50%);
+
+  display: flex;
+
+  gap: 9px;
+}
+
+
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+
+  padding: 0;
+
+  border:
+    1px solid
+    rgba(245, 240, 232, 0.45);
+
+  border-radius: 50%;
+
+  background:
+    rgba(10, 10, 10, 0.82);
+
+  cursor: pointer;
+
+  transition:
+    background 250ms ease,
+    border-color 250ms ease,
+    transform 250ms ease;
+}
+
+
+.carousel-dot.is-active {
+  background:
+    #c6a77d;
+
+  border-color:
+    #c6a77d;
+
+  transform:
+    scale(1.18);
+}
+
+
+/* =========================================================
+   COLOUR SELECTOR
+   ========================================================= */
+
+.colour-selector {
+  align-self: center;
+}
+
+
+.colour-heading {
+  display: block;
+
+  margin-bottom: 20px;
+
+  font-family:
+    "Montserrat",
+    sans-serif;
+
+  font-size: 0.6rem;
+
+  letter-spacing: 0.3em;
+
+  color: #c6a77d;
+}
+
+
+.colour-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 15px;
+}
+
+
+.colour-option {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 5px 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #a99e92;
+
+  cursor: pointer;
+
+  text-align: left;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 1rem;
+
+  transition:
+    color 250ms ease;
+}
+
+
+.colour-option:hover,
+.colour-option.is-selected {
+  color: #f5f0e8;
+}
+
+
+.colour-swatch {
+  position: relative;
+
+  width: 25px;
+  height: 25px;
+
+  flex: 0 0 auto;
+
+  border-radius: 50%;
+
+  border:
+    1px solid
+    rgba(245, 240, 232, 0.32);
+
+  box-shadow:
+    0 0 0 0
+    rgba(198, 167, 125, 0);
+
+  transition:
+    transform 250ms ease,
+    box-shadow 250ms ease;
+}
+
+
+.colour-option.is-selected
+.colour-swatch {
+  transform:
+    scale(1.08);
+
+  box-shadow:
+    0 0 0 3px
+    rgba(198, 167, 125, 0.24);
+}
+
+
+/* =========================================================
+   DETAIL PANELS
+   ========================================================= */
+
+.product-detail-panels {
+  margin-top: 35px;
+
+  border-top:
+    1px solid
+    rgba(198, 167, 125, 0.20);
+}
+
+
+.product-dropdown {
+  border-bottom:
+    1px solid
+    rgba(198, 167, 125, 0.20);
+}
+
+
+.product-dropdown-trigger {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding:
+    24px
+    4px;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #f5f0e8;
+
+  cursor: pointer;
+
+  font-family:
+    "Montserrat",
+    sans-serif;
+
+  font-size: 0.62rem;
+
+  letter-spacing: 0.28em;
+
+  text-align: left;
+}
+
+
+.dropdown-plus {
+  color: #c6a77d;
+
+  font-size: 1.3rem;
+
+  transition:
+    transform 300ms ease;
+}
+
+
+.dropdown-plus.is-open {
+  transform:
+    rotate(45deg);
+}
+
+
+/*
+  Animated expandable panel without hardcoded
+  content height.
+*/
+
+.product-dropdown-content {
+  display: grid;
+
+  grid-template-rows: 0fr;
+
+  opacity: 0;
+
+  transition:
+    grid-template-rows 350ms ease,
+    opacity 300ms ease;
+}
+
+
+.product-dropdown-content > * {
+  overflow: hidden;
+}
+
+
+.product-dropdown-content.is-open {
+  grid-template-rows: 1fr;
+
+  opacity: 1;
+}
+
+
+/* ---------------------------------------------------------
+   SPECIFICATIONS
+   --------------------------------------------------------- */
+
+.specification-list {
+  padding-bottom: 28px;
+}
+
+
+.specification-row {
+  display: grid;
+
+  grid-template-columns:
+    minmax(120px, 0.45fr)
+    1fr;
+
+  gap: 25px;
+
+  padding:
+    12px
+    4px;
+
+  color: #d2c8bd;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.05);
+}
+
+
+.specification-row span {
+  color: #a99e92;
+}
+
+
+.specification-row strong {
+  font-weight: 400;
+
+  color: #f5f0e8;
+}
+
+
+/* =========================================================
+   MARKETPLACES
+   ========================================================= */
+
+.marketplace-intro {
+  max-width: 560px;
+
+  margin:
+    0
+    0
+    22px;
+
+  color: #d2c8bd;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 1.08rem;
+
+  line-height: 1.5;
+}
+
+
+.marketplace-list {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      5,
+      minmax(0, 1fr)
+    );
+
+  gap: 12px;
+
+  padding-bottom: 30px;
+}
+
+
+.marketplace-item {
+  min-height: 78px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding:
+    14px;
+
+  border:
+    1px solid
+    rgba(198, 167, 125, 0.22);
+
+  font-family:
+    "Montserrat",
+    sans-serif;
+
+  font-size: 0.58rem;
+
+  letter-spacing: 0.10em;
+}
+
+
+.marketplace-item.is-active {
+  color: #f5f0e8;
+
+  cursor: pointer;
+
+  transition:
+    border-color 250ms ease,
+    background 250ms ease,
+    transform 250ms ease;
+}
+
+
+.marketplace-item.is-active:hover {
+  border-color:
+    #c6a77d;
+
+  background:
+    rgba(198, 167, 125, 0.06);
+
+  transform:
+    translateY(-2px);
+}
+
+
+.marketplace-item.is-disabled {
+  opacity: 0.28;
+
+  cursor: default;
+
+  filter:
+    grayscale(1);
+}
+
+
+.marketplace-mark {
+  width: 30px;
+  height: 30px;
+
+  flex: 0 0 auto;
+
+  display: grid;
+
+  place-items: center;
+
+  border:
+    1px solid
+    rgba(198, 167, 125, 0.35);
+
+  border-radius: 50%;
+
+  color: #c6a77d;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 0.85rem;
+}
+
+
+.marketplace-arrow {
+  margin-left: auto;
+
+  color: #c6a77d;
+}
+/* =========================================================
+   RICH PRODUCT INFORMATION
+   ========================================================= */
+
+.product-information {
+  padding-bottom: 30px;
+}
+
+
+.product-info-section {
+  padding:
+    25px
+    4px;
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.06);
+}
+
+
+.product-info-section:last-child {
+  border-bottom: 0;
+}
+
+
+.product-info-heading {
+  display: block;
+
+  margin-bottom: 18px;
+
+  font-family:
+    "Montserrat",
+    sans-serif;
+
+  font-size: 0.58rem;
+
+  letter-spacing: 0.30em;
+
+  color: #c6a77d;
+}
+
+
+/* ---------------------------------------------------------
+   DESCRIPTION
+   --------------------------------------------------------- */
+
+.product-description {
+  max-width: 720px;
+
+  margin: 0;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(
+      1.05rem,
+      1.35vw,
+      1.25rem
+    );
+
+  line-height: 1.65;
+
+  color: #d2c8bd;
+}
+
+
+.product-description strong {
+  font-weight: 500;
+
+  color: #f5f0e8;
+}
+
+
+/* ---------------------------------------------------------
+   FEATURE LIST
+   --------------------------------------------------------- */
+
+.product-highlight-list {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+  gap:
+    10px
+    30px;
+
+  margin: 0;
+
+  padding: 0;
+
+  list-style: none;
+}
+
+
+.product-highlight-list li {
+  position: relative;
+
+  padding-left: 18px;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 1.05rem;
+
+  color: #d2c8bd;
+}
+
+
+.product-highlight-list li::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 0.65em;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background:
+    #c6a77d;
+}
+
+
+/* ---------------------------------------------------------
+   MANUFACTURER
+   --------------------------------------------------------- */
+
+.product-manufacturer {
+  margin: 0;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 1.08rem;
+
+  font-style: normal;
+
+  line-height: 1.6;
+
+  color: #d2c8bd;
+}
+
+/* =========================================================
+   RESPONSIVE OVERRIDES
+   IMPORTANT: kept after all base/desktop rules so narrower
+   breakpoints reliably win in the CSS cascade.
+   ========================================================= */
+
+@media (min-width: 769px) {
+
+  .catalogue-card {
+    /*
+      A card is constrained by both width
+      and available viewport height.
+
+      This keeps the first row readable while
+      allowing part of row two to enter the viewport.
+    */
+
+    min-height:
+      min(
+        520px,
+        62vh
+      );
+  }
+
+}
+
+@media (max-width: 1100px) {
+
+  .home-hero {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(300px, 0.8fr);
+
+    gap: 40px;
+
+    padding-left: 210px;
+    padding-right: 50px;
+  }
+
+  .brand-composition {
+    min-height: 570px;
+  }
+
+  .diagonal-wordmark {
+    height: 430px;
+  }
+
+  .wordmark-c {
+    top: 0;
+    left: 3%;
+
+    font-size: clamp(8rem, 15vw, 11rem);
+  }
+
+  .wordmark-my {
+    top: 125px;
+    left: 22%;
+
+    font-size: clamp(7rem, 13vw, 10rem);
+  }
+
+  .wordmark-ora {
+    top: 250px;
+    left: 38%;
+
+    font-size: clamp(7rem, 13vw, 10rem);
+  }
+}
+
+@media (max-width: 900px) {
+
+  .home-hero {
+    grid-template-columns: 1fr;
+
+    gap: 60px;
+
+    padding:
+      100px
+      24px
+      110px;
+  }
+
+  .brand-composition {
+    min-height: 520px;
+  }
+
+  .diagonal-wordmark {
+    height: 390px;
+
+    margin: auto;
+  }
+
+  .wordmark-c {
+    top: 0;
+    left: 5%;
+
+    font-size: clamp(7rem, 30vw, 11rem);
+  }
+
+  .wordmark-my {
+    top: 110px;
+    left: 25%;
+
+    font-size: clamp(6.5rem, 27vw, 10rem);
+  }
+
+  .wordmark-ora {
+    top: 220px;
+    left: 38%;
+
+    font-size: clamp(6rem, 25vw, 9rem);
+  }
+
+  .brand-copy {
+    position: relative;
+
+    margin-top: -20px;
+  }
+
+  .featured-product {
+    max-width: 500px;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  /*
+    Navigation becomes a fixed bottom navigation bar.
+  */
+
+  .side-menu {
+    top: auto;
+    bottom: 0;
+
+    width: 100%;
+
+    transform: none;
+
+    flex-direction: row;
+  }
+
+  .side-menu-item {
+    width: auto;
+
+    flex: 1;
+
+    padding: 15px 8px;
+
+    text-align: center;
+
+    font-size: 0.55rem;
+  }
+
+  .side-menu-item:hover {
+    width: auto;
+  }
+
+
+  /* =========================================================
+     MOBILE PAGE RESET
+
+     Desktop pages reserve ~220–310px on the left for the
+     side navigation. On mobile the navigation is at the
+     bottom, so that desktop allowance must disappear.
+     ========================================================= */
+
+  .standard-page,
+  .catalogue-page,
+  .about-page,
+  .contact-page {
+    width: 100%;
+    max-width: none;
+
+    margin-left: 0;
+    margin-right: 0;
+
+    padding-left: 18px;
+    padding-right: 18px;
+
+    overflow-x: hidden;
+  }
+
+
+  /*
+    Home becomes vertically stacked:
+
+    BRAND
+      ↓
+    PRODUCT
+  */
+
+  .home-hero {
+    min-height: auto;
+
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+
+    padding:
+      70px
+      24px
+      110px;
+  }
+
+  .home-brand-area {
+    width: 100%;
+  }
+
+  .brand-composition {
+    min-height: 520px;
+  }
+
+  .diagonal-wordmark {
+    width: 100%;
+    height: 380px;
+
+    margin: 0 auto;
+  }
+
+
+  /* Mobile C */
+
+  .wordmark-c {
+    top: 0;
+    left: 5%;
+
+    font-size: clamp(7rem, 30vw, 10rem);
+  }
+
+
+  /* Mobile MY */
+
+  .wordmark-my {
+    top: 105px;
+    left: 24%;
+
+    font-size: clamp(6.5rem, 27vw, 9rem);
+  }
+
+
+  /* Mobile ORA */
+
+  .wordmark-ora {
+    top: 215px;
+    left: 37%;
+
+    font-size: clamp(6rem, 25vw, 8.5rem);
+  }
+
+
+  /*
+    Text no longer needs absolute positioning on mobile.
+  */
+
+  .brand-copy {
+    position: relative;
+
+    left: auto;
+    bottom: auto;
+
+    max-width: 100%;
+
+    margin-top: -15px;
+  }
+
+  .brand-label {
+    font-size: 0.6rem;
+
+    line-height: 1.8;
+  }
+
+  .brand-statement {
+    max-width: 420px;
+
+    font-size: 1.35rem;
+  }
+
+
+  /*
+    Home product / viewer area
+  */
+
+  .home-product-area {
+    width: 100%;
+  }
+
+  .featured-product {
+    width: 100%;
+    max-width: 500px;
+
+    margin: 0 auto;
+  }
+
+  .product-viewer-placeholder {
+    aspect-ratio: 1 / 1;
+  }
+
+
+  /*
+    Generic inner pages
+  */
+
+  .standard-page {
+    min-height: 100vh;
+
+    padding-top: 90px;
+    padding-bottom: 120px;
+  }
+
+
+  /* =========================================================
+     FOOTER — MOBILE
+     ========================================================= */
+
+  .site-footer {
+    padding:
+      55px
+      24px
+      100px;
+  }
+
+
+  .footer-main {
+    grid-template-columns:
+      1.4fr
+      1fr;
+
+    gap:
+      45px
+      35px;
+
+    padding-bottom: 50px;
+  }
+
+
+  /*
+    Brand gets its own full first row.
+  */
+
+  .footer-brand {
+    grid-column:
+      1 / -1;
+  }
+
+
+  .footer-logo {
+    font-size: 2.3rem;
+  }
+
+
+  .footer-column {
+    gap: 12px;
+  }
+
+
+  .footer-bottom {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    padding-top: 24px;
+  }
+
+
+  /* =========================================================
+     CONTACT — MOBILE
+     ========================================================= */
+
+  .contact-page {
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding-top: 55px;
+    padding-bottom: 120px;
+
+    /*
+      Desktop reserves space for the left menu.
+      Mobile does NOT.
+    */
+    padding-left: 18px;
+    padding-right: 18px;
+
+    overflow-x: hidden;
+  }
+
+
+  .contact-header {
+    width: 100%;
+    max-width: none;
+
+    margin:
+      0
+      0
+      34px;
+  }
+
+
+  .contact-header h1 {
+    margin:
+      7px
+      0
+      16px;
+
+    font-size:
+      clamp(3.5rem, 17vw, 5rem);
+
+    line-height: 0.9;
+  }
+
+
+  .contact-header p {
+    width: 100%;
+    max-width: 340px;
+
+    margin: 0;
+
+    font-size: 1.08rem;
+
+    line-height: 1.5;
+  }
+
+
+  .contact-cards {
+    width: 100%;
+
+    gap: 18px;
+  }
+
+
+  .contact-card,
+  .contact-card-phone,
+  .contact-card-email {
+    width: 100%;
+    max-width: none;
+
+    min-height: auto;
+
+    align-self: stretch;
+
+    margin: 0;
+
+    padding:
+      32px
+      24px;
+  }
+
+
+  .contact-value {
+    max-width: 100%;
+
+    font-size:
+      clamp(2.2rem, 10vw, 3.2rem);
+
+    white-space: nowrap;
+  }
+
+
+  .contact-email {
+    font-size:
+      clamp(1.65rem, 7.8vw, 2.6rem);
+
+    white-space: normal;
+
+    overflow-wrap: anywhere;
+  }
+
+
+  .contact-description {
+    width: 100%;
+    max-width: none;
+
+    font-size: 1.05rem;
+
+    line-height: 1.55;
+  }
+
+
+  /* =========================================================
+     ABOUT — MOBILE
+     ========================================================= */
+
+  .about-page {
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding-top: 55px;
+    padding-bottom: 120px;
+
+    /*
+      Remove desktop left-navigation allowance.
+    */
+    padding-left: 18px;
+    padding-right: 18px;
+
+    overflow-x: hidden;
+  }
+
+
+  .about-header {
+    width: 100%;
+    max-width: none;
+
+    margin:
+      0
+      0
+      32px;
+  }
+
+
+  .about-header h1 {
+    margin:
+      7px
+      0
+      14px;
+
+    font-size:
+      clamp(3.5rem, 17vw, 5rem);
+
+    line-height: 0.9;
+  }
+
+
+  .about-header p {
+    width: 100%;
+    max-width: 340px;
+
+    margin: 0;
+
+    font-size: 1.08rem;
+
+    line-height: 1.5;
+  }
+
+
+  .about-cards {
+    width: 100%;
+
+    gap: 16px;
+  }
+
+
+  .about-card,
+  .about-card-vision,
+  .about-card-material,
+  .about-card-location {
+    width: 100%;
+    max-width: none;
+
+    min-height: auto;
+
+    align-self: stretch;
+
+    margin: 0;
+
+    padding:
+      28px
+      24px;
+  }
+
+
+  .about-card h2 {
+    width: 100%;
+    max-width: 100%;
+
+    font-size:
+      clamp(2rem, 10vw, 2.8rem);
+
+    line-height: 1;
+  }
+
+
+  .about-description {
+    width: 100%;
+    max-width: 100%;
+
+    font-size: 1.05rem;
+
+    line-height: 1.55;
+  }
+
+
+  .about-secondary-copy {
+    margin-top: 12px;
+  }
+
+
+  .about-address {
+    font-size: 1.05rem;
+  }
+
+
+  /* =========================================================
+     CATALOGUE — MOBILE
+     ========================================================= */
+
+  .catalogue-page {
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding-top: 55px;
+    padding-bottom: 120px;
+
+    /*
+      Remove desktop left-navigation allowance.
+    */
+    padding-left: 18px;
+    padding-right: 18px;
+
+    overflow-x: hidden;
+  }
+
+
+  .catalogue-header {
+    width: 100%;
+    max-width: none;
+
+    margin:
+      0
+      0
+      28px;
+  }
+
+
+  .catalogue-header h1 {
+    margin:
+      7px
+      0
+      10px;
+
+    font-size:
+      clamp(3.6rem, 18vw, 5.2rem);
+
+    line-height: 0.9;
+  }
+
+
+  .catalogue-header p {
+    width: 100%;
+    max-width: 340px;
+
+    margin: 0;
+
+    font-size: 1.05rem;
+
+    line-height: 1.45;
+  }
+
+
+  /* ---------------------------------------------------------
+     STRICTLY ONE PRODUCT PER ROW
+     --------------------------------------------------------- */
+
+  .catalogue-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+      minmax(0, 1fr);
+
+    gap: 18px;
+  }
+
+
+  /*
+    One large editorial product card.
+
+    It occupies most of the mobile viewport so the
+    following product begins to peek into view as the
+    visitor reaches the lower part of the first card.
+  */
+
+  .catalogue-card {
+    width: 100%;
+    min-width: 0;
+
+    height: 72dvh;
+
+    min-height: 540px;
+    max-height: 720px;
+
+    aspect-ratio: auto;
+
+    margin: 0;
+  }
+
+
+  .catalogue-card-image-wrap {
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .catalogue-card-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    padding: 20px;
+
+    background:
+      radial-gradient(
+        circle at center,
+        rgba(198, 167, 125, 0.07),
+        #0d0d0d 72%
+      );
+  }
+
+
+  .catalogue-card-copy {
+    left: 24px;
+    right: 24px;
+    bottom: 26px;
+  }
+
+
+  .catalogue-card-copy h2 {
+    font-size:
+      clamp(2.5rem, 12vw, 3.7rem);
+  }
+
+
+  /* =========================================================
+     PRODUCT DETAIL — KEEP CURRENT MOBILE BEHAVIOUR
+     ========================================================= */
+
+  .product-detail-backdrop {
+    align-items: flex-start;
+
+    padding: 0;
+  }
+
+
+  .product-detail {
+    width: 100%;
+
+    min-height: 100vh;
+
+    max-height: none;
+
+    padding:
+      72px
+      20px
+      100px;
+
+    border-left: 0;
+    border-right: 0;
+  }
+
+
+  .product-detail-main {
+    grid-template-columns:
+      1fr;
+
+    gap: 25px;
+  }
+
+
+  /* ---------------------------------------------------------
+     COLOURS BECOME HORIZONTAL
+     --------------------------------------------------------- */
+
+  .colour-list {
+    flex-direction: row;
+
+    flex-wrap: wrap;
+
+    gap:
+      14px
+      22px;
+  }
+
+
+  .colour-option {
+    min-width: auto;
+  }
+
+
+  /* ---------------------------------------------------------
+     MARKETPLACE GRID
+     --------------------------------------------------------- */
+
+  .marketplace-list {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+  }
+
+
+  .specification-row {
+    grid-template-columns:
+      1fr;
+
+    gap: 4px;
+  }
+
+
+  .product-highlight-list {
+    grid-template-columns:
+      1fr;
+  }
+
+
+
+  /* Mobile carousel: image itself advances; arrows stay desktop-only. */
+  .carousel-arrow {
+    display: none;
+  }
+
+  .carousel-stage {
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 430px) {
+
+  .brand-composition {
+    min-height: 470px;
+  }
+
+  .diagonal-wordmark {
+    height: 340px;
+  }
+
+  .wordmark-c {
+    top: 0;
+    left: 2%;
+  }
+
+  .wordmark-my {
+    top: 95px;
+    left: 20%;
+  }
+
+  .wordmark-ora {
+    top: 195px;
+    left: 31%;
+  }
+
+  .side-menu-item {
+    padding:
+      14px
+      4px;
+
+    font-size: 0.48rem;
+
+    letter-spacing: 0.12em;
+  }
 }
