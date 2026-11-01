@@ -218,8 +218,8 @@ export const products = [
       },
 
       flipkart: {
-        enabled: false,
-        url: "",
+       enabled: true,
+       url: "https://www.flipkart.com/cmyora-cmyora0001-shoulder-bag/p/itmd156aba8863d4?pid=BAGHSHJ6XPJCQFYC",
       },
 
       myntra: {
